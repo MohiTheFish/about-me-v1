@@ -1,64 +1,8 @@
 import React from 'react';
+
 import foellinger from './images/foellinger.jpg'
-import './App.css';
 
-// class MyNav extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.toggle = this.toggle.bind(this);
-//     this.state = {
-//       isOpen: false
-//     };
-//   }
-//   toggle() {
-//     this.setState({
-//       isOpen: !this.state.isOpen
-//     });
-//   }
-//   render() {
-//     return (
-//       <Router>
-//       <div className = "nav-bar">
-//         <Navbar color="light" light expand="md">
-//           <NavbarBrand href="/">Home</NavbarBrand>
-//           <NavbarToggler onClick={this.toggle} />
-//           <Collapse isOpen={this.state.isOpen} navbar>
-//             <Nav className="ml-auto" navbar>
-//               <NavItem>
-//                 <NavLink href="/resume">Resume</NavLink>
-//               </NavItem>
-//               <NavItem>
-//                 <NavLink href="https://github.com/reactstrap/reactstrap">MyGitHub</NavLink>
-//               </NavItem>
-//               <UncontrolledDropdown nav inNavbar>
-//                 <DropdownToggle nav caret>
-//                   Options
-//                 </DropdownToggle>
-//                 <DropdownMenu right>
-//                   <DropdownItem>
-//                     Option 1
-//                   </DropdownItem>
-//                   <DropdownItem>
-//                     Option 2
-//                   </DropdownItem>
-//                   <DropdownItem divider />
-//                   <DropdownItem>
-//                     Reset
-//                   </DropdownItem>
-//                 </DropdownMenu>
-//               </UncontrolledDropdown>
-//             </Nav>
-//           </Collapse>
-//         </Navbar>
-
-//           {/* <Route exact path="/" component = {MainPage}/> */}
-//           <Route path="/resume" component = {Accomplishments}/>
-//       </div>
-//       </Router>
-//     );
-//   }
-// }
+import './MainPage.css';
 
 class TitleName extends React.Component{
   constructor(props) {
@@ -68,7 +12,8 @@ class TitleName extends React.Component{
   render() {
     return (
       <div className = "tiles name-tile">
-      <p>Hello.<br/>I'm Muhammed Imran</p>
+        <p className="titleText">Hello.<br/>I'm Muhammed Imran</p>
+        <p className="subText">But some people call me MohiTheFish.</p>
       </div>
     )
   }
@@ -127,7 +72,7 @@ class MainPage extends React.Component{ //Bundle all of these components to make
   }
   render() {
     return (
-      <div className = "mainPageWrapper">
+      <div className = "mainPage-Wrapper">
         <TitleName scrolly = {this.state.scrolly}/>
         <SchoolTile scrolly = {this.state.scrolly} schoolAnimClass = {this.state.schoolTileAnimateClass}/>
       </div>

@@ -1,0 +1,159 @@
+div.accomplishments-page-wrapper {
+  background-color: rgb(76, 120, 170);
+  position: relative;
+  /* padding-bottom: 10px; */
+}
+
+#resume-note {
+  box-sizing: border-box;
+  margin: 0px 0px 0px 30px;
+  padding-top: 10px;
+  /* width: 740px; */
+  color: white;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+div.quick-info {
+  float: right;
+
+  background-color: rebeccapurple;
+  height: 200px;
+  width: 340px;
+
+  color: whitesmoke; /*text*/
+  border-radius: 15px;
+  padding: 15px;
+  margin-left: 20px;
+}
+
+div.quick-info > ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.quick-info li a {
+  text-decoration: none;
+}
+div.quick-info li a:link, div.quick-info li a:visited{
+  color: skyblue;
+}
+div.quick-info li a:hover, div.quick-info li a:active{
+  color: rgb(87, 131, 148);
+  text-decoration: none;
+}
+/* ------------------------------------------------------------------------------------------ */
+
+
+ul.quick-info-inner {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+ul.quick-info-inner li {
+  padding-left: 5px;
+}
+
+
+
+div.resume-info {
+  min-height: 400px;
+  padding: 10px 20px 20px 20px;
+  color: #eafff0;
+  margin-top: 0px;
+}
+
+/*Revert to using direct child, >, if things start falling apart */
+div.resume-info div {
+  margin-bottom: 8px;
+}
+
+div.resume-info div h2 {
+  margin-bottom: 0px;
+}
+
+div.resume-info div h4 {
+  margin-top: 7px;
+  padding-left: 20px;
+  margin-bottom: 2px;
+}
+
+div.resume-info div p {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  padding-left: 30px;
+  margin-bottom: 0px;
+}
+
+div.resume-info ul {
+  margin: 0px;
+}
+
+div.resume-info ul li{
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.2em;
+  line-height: 1.3em;
+  max-width: 1240px;
+}
+
+div.resume-info li a:link, div.resume-info li a:visited {
+  text-decoration-line: underline;
+  color: #c7c7d6;
+}
+
+div.resume-info li a:hover, div.resume-info li a:active {
+  text-decoration-line: underline;
+  color: #a2b7d6;
+}
+#achievements-skills-info {
+  margin-bottom: 0px;
+}
+#achievements-info{
+  float:left;
+  width: 50%;
+  
+}
+#skills-info{
+  float: left;
+  width: 50%;
+}
+
+#spacer {
+  clear: both;
+  margin: 0px;
+}
+/* 
+div.basic-info h2 {
+  margin-bottom: 0px;
+}
+
+div.basic-info h4 {
+  margin-top: 7px;
+  padding-left: 10px;
+  margin-bottom: 2px;
+}
+
+div.basic-info p {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  padding-left: 20px;
+  margin-bottom: 0px;
+}
+
+div.activities-info h2 {
+  margin-bottom: 0px;
+}
+
+div.activities-info h4 {
+  margin-top: 7px;
+  padding-left: 10px;
+  margin-bottom: 2px;
+}
+
+div.activities-info p {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  padding-left: 20px;
+  margin-bottom: 0px;
+} */

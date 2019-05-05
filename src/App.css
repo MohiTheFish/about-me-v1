@@ -1,116 +1,37 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: #023a7f;
 }
-div.wrapper {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
+
+
 div.header {
   text-align: center;
 }
 
-div.nav-bar {
+.nav-bar {
   position: sticky;
   top: 0px;
   z-index: 1000;
-}
-/*--------------------------------------------------------------------------------------------------------*/
-div.tiles {
-  height: 600px;
-}
 
-div.name-tile{
-  height: 700px;
-
-  background-image: url(./images/water.jpg);
-  background-size: 100% 700px;
-  margin: 0px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  position: relative;
+  background-color: #90CAF9; /*COLOR FOR NAVIGATION*/
+ 
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
-div.name-tile > p {
-  text-align: center; 
-  font-size: 7em;
-  color: #a3b5d3;
-  opacity: 0;
-
-  width: 990px; 
-  height: 240px;
-  margin: 0px;
-  padding: 0px;
-
-  position: absolute;/*Was previously doing stuff like left:__px*/
-  
-  animation-name: appearText-name-tile;
-  animation-delay: 1s;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+/* IF YOU WANNA CHANGE THE COLOR OF THE TEXT IN THE NAVIGATION BAR, CHANGE IT HERE ---------------------- */
+/* .navbar-light .navbar-nav .nav-link  { 
+  color: orange;
 }
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: red;
+} */
 
-@keyframes appearText-name-tile {
-  0% {
-    color: blue;
-    opacity: 0;
-  }
-  100% {
-    color: #dde9fd;
-    opacity: 1;
-  }
+
+footer {
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(182, 200, 206);
 }
-/*----------------------------------------------------------------------------------------------------*/
-div.schoolTile {
-  background-color: rgb(73, 42, 85);
-  
-  margin: 0px;
-
-  height: 600px;
-  box-sizing: content-box;
-  border-style: solid;
-  border-width: 2px;
-
-  position: relative; 
-}
-
-div.schoolTile > p {
-  text-align: left; 
-  font-size: 4em;
-  color: blue;
-  opacity: 0;
-
-  width: 700px; 
-  height: 200px;
-  margin: 0px;
-  padding: 0px;
-
-
-  position: absolute;
-  left: 150px;
-  top: 215px;
-  
-}
-div.schoolTile  p.schoolTileAnimate {
-  animation-name: appearText-school-tile;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes appearText-school-tile {
-  0% {
-    color: blue;
-    opacity: 0;
-  }
-  100% {
-    color: #dde9fd;
-    opacity: 1;
-  }
-}
-/*----------------------------------------------------------------------------------------------------*/
-

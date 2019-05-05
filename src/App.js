@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Accomplishments from './Accomplishments';
 import MainPage from './MainPage';
+import {BrowserRouter} from "react-router-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {
   Collapse,
@@ -9,11 +10,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink} from 'reactstrap';
   
 import './App.css';
 
@@ -31,11 +28,12 @@ class MyNav extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+  //removed color = "light" from Navbar so that I can choose color
   render() {
     return (
       <Router>
       <div className = "nav-bar">
-        <Navbar color="light" light expand="md">
+        <Navbar className = "nav-style" light expand="md"> 
           <NavbarBrand href="/">Home</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -44,48 +42,27 @@ class MyNav extends React.Component {
                 <NavLink href="/resume">Resume</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">MyGitHub</NavLink>
+                <NavLink href="https://github.com/MohiTheFish" target="_blank">MyGitHub</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
             </Nav>
           </Collapse>
         </Navbar>
-
+      </div>
           <Route exact path="/" component = {MainPage}/>
           <Route path="/resume" component = {Accomplishments}/>
-      </div>
       </Router>
     );
   }
 }
 
-
-
 class App extends Component {
   
   render() {
     return (
-      <Router>
         <div className = "wrapper"> 
           <MyNav/>
+        <footer>Muhammed Imran 2019</footer>
         </div>
-      </Router>
     );
   };
 }
