@@ -1,13 +1,8 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
   background-color: #023a7f;
-}
-
-
-div.header {
-  text-align: center;
 }
 
 .nav-bar {
@@ -17,8 +12,8 @@ div.header {
 
   background-color: #90CAF9; /*COLOR FOR NAVIGATION*/
  
-  margin-left: -20px;
-  margin-right: -20px;
+  /* margin-left: -20px;
+  margin-right: -20px; */
 }
 
 /* IF YOU WANNA CHANGE THE COLOR OF THE TEXT IN THE NAVIGATION BAR, CHANGE IT HERE ---------------------- */

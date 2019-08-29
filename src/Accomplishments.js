@@ -5,10 +5,10 @@ function Accomplishments() {
     <div className="accomplishments-page-wrapper">
       <div className = "quick-info">
         <ul>
-          <li><a href="MuhammedImranResumeMarch2019.pdf" target="_blank">See pdf version</a></li>
+          <li><a href="August2019ResumeImran.pdf" target="_blank">See pdf version</a></li>
           <br/>
           <ul className = "quick-info-inner"> Connect with me: 
-            <li><a href= "https://www.linkedin.com/in/muhammed-imran-64233b170/" target="_blank">LinkedIn</a></li> 
+            <li><a href= "https://www.linkedin.com/in/muhammed-imran-64233b170/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li> 
             <li>Email: <span>imranmuhammed2000@gmail.com</span></li>
             <li>Second Email: miimran2@illinois.edu</li>
           </ul>
@@ -24,13 +24,15 @@ function Accomplishments() {
           <h4>Completed Coursework: </h4>
           <p>CS 126: Software Design Studio | CS 173: Discrete Structures | CS 225: Data Structures | CS 296: Data Visualization</p>
           <p>CS 233: Computer Architecture | MATH 285: Intro to Differential Equations | MATH 415: Applied Linear Algebra</p>
+          <h4>In Progress Coursework:</h4>
+          <p>CS 241: System Programming | CS 357: Numerical Methods | CS 411: Database Systems | CS 418: Interactive Computer Graphics</p>
         </div>
         <div id = "activities-info">
           <h2>Activities/Leadership</h2>
           <h4>Engineering Open House Exhibition Participant | Spring 2019</h4>
             <ul>
               <li> 
-                Developed a cheap lie detector with remarkable accuracy over the course of 2 months
+                Developed a cheap lie detector that performed   with high accuracy over the course of 2 months
               </li>
               <li>
                 Collaborated with a medium-sized team to ensure product effectiveness and software correctness
@@ -67,18 +69,30 @@ function Accomplishments() {
               </li>
             </ul>
         </div>
+        <div id = "employment-info">
+          <h2>Employment</h2>
+          <h4>Jewel Osco Associate | Summer 2019</h4>
+          <ul>
+            <li>
+              Interacted with customers daily to ensure their satisfaction 
+            </li>
+            <li>
+              Cooperated with available coworkers to ensure efficiency in transactions 
+            </li>
+          </ul>
+        </div>
         <div id = "projects-info">
           <h2>Projects</h2>
           <ul>
             <li>
-              Developed a lie detector in collaboration with a team as part of EOH. My contributions focused on visualizing data collected from the Arduino boards. <a href="https://github.com/walbers/TOI-EOH" target="_blank">See GitHub</a>
+              Developed a lie detector in collaboration with a team as part of EOH. My contributions focused on visualizing data collected from the Arduino boards. <a href="https://github.com/walbers/TOI-EOH" target="_blank" rel="noopener noreferrer">See GitHub</a>
             </li>
             <li>
               Developed WinLog, a Windows data provenance visualization tool as part of P.U.R.E.
-              Can be used to track file-file interactions. <a href="poster_wlog.pdf" target = "_blank">See Poster.</a> <a href="https://github.com/Wajihulhassan/winprov" target="_blank">See GitHub.</a>
+              Can be used to track file-file interactions. <a href="poster_wlog.pdf" target = "_blank" rel="noopener noreferrer">See Poster.</a> <a href="https://github.com/Wajihulhassan/winprov" target="_blank" rel="noopener noreferrer">See GitHub.</a>
             </li>
             <li>
-              As part of CS 296, developed a visualization to reflect changing international student demographics at UIUC. <a href="international-visualization/visIndex.html" target="_blank">See visualization. </a>
+              As part of CS 296, developed a visualization to reflect changing international student demographics at UIUC. <a href="international-visualization/visIndex.html" target="_blank" rel="noopener noreferrer">See visualization. </a>
             </li>
           </ul>
         </div>

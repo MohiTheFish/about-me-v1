@@ -1,9 +1,18 @@
 /*--------------------------------------------------------------------------------------------------------*/
 div.tiles {
   height: 600px;
+  box-sizing: content-box;
+  padding: 0px;
+
+  /* overflow: hidden; */
 }
 
-div.name-tile{
+div.tiles img {
+  height: 600px;
+}
+
+
+div.name-tile {
   height: 700px;
 
   background-image: url(./images/water.jpg);
@@ -35,7 +44,7 @@ div.name-tile > p.titleText {
   animation-name: appearText-name-tile;
   animation-delay: 1s;
   animation-timing-function: linear;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -50,13 +59,11 @@ div.name-tile > p.subText {
   height: 50px;
   margin: 0px;
   padding: 0px;
-
-  /* position: absolute; */
   
   animation-name: appearText-name-tile;
-  animation-delay: 3.5s;
+  animation-delay: 2.7s;
   animation-timing-function: linear;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -73,37 +80,37 @@ div.name-tile > p.subText {
   }
 }
 /*----------------------------------------------------------------------------------------------------*/
-div.schoolTile {
+div.school-tile {
   background-color: rgb(73, 42, 85);
   
   margin: 0px;
+  padding: 0px;
 
-  height: 600px;
-  box-sizing: content-box;
   border-style: solid;
   border-width: 2px;
 
   position: relative; 
+  overflow: hidden;
 }
 
-div.schoolTile > p {
-  text-align: left; 
+div.school-tile p {
+  /* float: right; */
   font-size: 3.5em;
-  color: blue;
   opacity: 0;
+  text-align: center;
+  max-width: 100%;
+  padding-top: 225px;
 
-  width: 600px; 
-  height: 400px;
-  margin: 0px;
-  padding: 0px;
-
-
-  position: absolute;
-  left: 170px;
-  top: 225px;
+  margin-left: 20px;
+  margin-right: 20px;
   
 }
-div.schoolTile  p.schoolTileAnimate {
+
+.clear-float {
+  clear: both;
+}
+
+div.school-tile  p.schoolTileAnimate {
   animation-name: appearText-school-tile;
   animation-duration: 2s;
   animation-iteration-count: 1;
@@ -121,3 +128,151 @@ div.schoolTile  p.schoolTileAnimate {
   }
 }
 /*----------------------------------------------------------------------------------------------------*/
+
+div.hobbies-tile {
+  background-color: rgb(100, 121, 172);
+  margin: 0px;
+  position: relative;
+}
+
+div.hobbies-tile > p {
+  text-align: left; 
+  font-size: 3.5em;
+  color: red;
+  opacity: 0;
+
+  width: 600px; 
+  height: 400px;
+  margin: 0px;
+  padding: 0px;
+
+  position: absolute;
+  left: 170px;
+  top: 225px;
+}
+
+div.hobbies-tile p.hobbiesTileAnimate {
+  animation-name: appearText-hobbies-tile;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+div.arrow-wrapper {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#hobbies-message-left {
+  align-content: left;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+#hobbies-carousel {
+  align-content: right;
+  width: 800px;
+  height: 100%;
+  background-color: green;
+  margin-left: 5px;
+}
+#right-arrow-wrapper {
+  float: right;
+}
+#left-arrow-wrapper {
+  float: left;
+}
+.arrow-link {
+  background-color: red;
+  cursor: pointer;
+  font-size: 40px;
+  border-radius: 24px;
+}
+
+.arrow-link:hover{
+  color: green;
+}
+
+@keyframes appearText-hobbies-tile {
+  0% {
+    color: blue;
+    opacity: 0;
+  }
+  100% {
+    color: red;
+    opacity: 1;
+  }
+}
+
+
+
+@media screen and (max-width:768px){
+  div.tiles {
+    height: 500px;
+  }
+  div.name-tile {
+    height: 500px;
+  }
+  div.name-tile > p.titleText {
+    text-align: center; 
+    font-size: 3em;
+    width: 95%; 
+    height: 120px;
+    margin: 0px;
+    padding: 0px;
+  
+  }
+  
+  div.name-tile > p.subText {
+    text-align: center; 
+    font-size: 2.5em;
+    opacity: 0;
+  
+    width: 95%; 
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+  
+  }
+
+  div.school-tile {
+    position: relative;
+  }
+
+
+  div.school-tile p {
+    float: none;
+    text-align: center; 
+    font-size: 3.5em;
+    position: absolute;
+    top: 140px;
+
+    max-width: 100%;
+    margin-right: 0px;
+    padding-top: 0px;
+  }
+
+  div.school-tile img {
+    float:none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  @keyframes appearText-school-tile {
+    0% {
+      color: blue;
+      opacity: 0;
+    }
+    100% {
+      color: #dde9fd;
+      opacity: 1;
+    }
+  }
+
+
+
+}
