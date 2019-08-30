@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Accomplishments from './Accomplishments';
 import MainPage from './MainPage';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import {
   Collapse,
   Navbar,

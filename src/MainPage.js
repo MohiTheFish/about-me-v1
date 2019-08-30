@@ -1,6 +1,8 @@
 import React from 'react';
 
 import foellinger from './images/foellinger.jpg'
+import league from './images/leagueimg.jpg'
+import zelda from './images/zelda25.jpg'
 
 import './MainPage.css';
 
@@ -43,12 +45,15 @@ class HobbiesTile extends React.Component {
 
     this.state = {
       currentSlide: 0,
-      numImages: 1,
+      numImages: 2,
     }
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
   }
 
+  myImages = [
+    zelda, league
+  ];
   nextSlide() {
     console.log("next called");
     var slide = this.state.currentSlide + 1;
@@ -82,7 +87,10 @@ class HobbiesTile extends React.Component {
   render() {
     return (
       <div className = "tiles hobbies-tile">
+        <div id = "hobbies-message-left">
+        </div>
         <div className = "carousel-wrapper" id="hobbies-carousel">
+          <img className="carousel-image" src = {this.myImages[this.state.currentSlide]}/>
           <div className = "arrow-wrapper"  id="right-arrow-wrapper" onClick = {this.nextSlide}>
             <i className="material-icons-round arrow-link">arrow_forward</i>
           </div>
@@ -91,10 +99,9 @@ class HobbiesTile extends React.Component {
           </div>
           <div className = "clear-float"/>
         </div>
-        <div id = "hobbies-message-left">
-          NONSENSE
+        <div id = "hobbies-message-right">
+          <p>nonsenseOSIFJSIJEFKSFLKSJKFUJSNFLKAEFKJAKENFLKAJENFAN;EFKNAJEFBAHEFKAJBHEFLHEFAJHUEFLAJUHKE,NFLKAEFJAHKEGAFEKUAWEFJKAEFBJKEYFG</p>
         </div>
-        
       </div>
     )
   }
@@ -154,7 +161,7 @@ class MainPage extends React.Component{ //Bundle all of these components to make
       newState.hobbiesTileAnimateClass = "hobbiesTileAnimate";
     }
 
-    console.log(scrollY);
+    // console.log(scrollY);
 
     this.setState(newState);
   }

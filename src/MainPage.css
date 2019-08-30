@@ -4,7 +4,7 @@ div.tiles {
   box-sizing: content-box;
   padding: 0px;
 
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 div.tiles img {
@@ -89,7 +89,6 @@ div.school-tile {
   border-style: solid;
   border-width: 2px;
 
-  position: relative; 
   overflow: hidden;
 }
 
@@ -132,58 +131,67 @@ div.school-tile  p.schoolTileAnimate {
 div.hobbies-tile {
   background-color: rgb(100, 121, 172);
   margin: 0px;
-  position: relative;
+  padding: 0px;
+  position: static;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  max-height: 600px;
 }
 
-div.hobbies-tile > p {
-  text-align: left; 
-  font-size: 3.5em;
-  color: red;
-  opacity: 0;
-
-  width: 600px; 
-  height: 400px;
+div.hobbies-tile > * {
   margin: 0px;
   padding: 0px;
-
-  position: absolute;
-  left: 170px;
-  top: 225px;
 }
 
-div.hobbies-tile p.hobbiesTileAnimate {
-  animation-name: appearText-hobbies-tile;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+div.hobbies-tile p {
+  margin: 0px;
+  padding: 0px;
 }
 
-div.arrow-wrapper {
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 #hobbies-message-left {
-  align-content: left;
   width: 100%;
-  height: 100%;
-  background-color: red;
+  display: table-cell;
+  background-color: purple;
+  max-height: 600px;
 }
-#hobbies-carousel {
-  align-content: right;
+.carousel-wrapper, #hobbies-carousel {
   width: 800px;
-  height: 100%;
+  display: table-cell;
   background-color: green;
-  margin-left: 5px;
+  max-height: 600px;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
 }
+.carousel-image {
+  width: 800px;
+  position: absolute;
+}
+#hobbies-message-right {
+  width: 100%;
+  display: table-cell;
+  background-color: orange;
+  max-height: 600px;
+}
+
+
+div.arrow-wrapper {
+  position: absolute;
+  top:50%;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+
+}
+
 #right-arrow-wrapper {
-  float: right;
+  right: 10px;
 }
 #left-arrow-wrapper {
-  float: left;
+  left: 10px;
 }
 .arrow-link {
   background-color: red;
@@ -207,6 +215,8 @@ div.arrow-wrapper {
   }
 }
 
+
+/*----------------------------------------------------------------------------------------------------*/
 
 
 @media screen and (max-width:768px){
