@@ -3,6 +3,7 @@ import React from 'react';
 import foellinger from './images/foellinger.jpg'
 import league from './images/leagueimg.jpg'
 import zelda from './images/zelda25.jpg'
+import mohidab from './images/mohidab.jpg'
 
 import './MainPage.css';
 
@@ -31,7 +32,7 @@ class SchoolTile extends React.Component {
     return (
       <div className = "tiles school-tile">
         <img align="right" src={foellinger} alt="Foellinger Auditorium."></img>
-        <p className = {this.props.schoolAnimClass}>I'm currently studying at the University of Illinois at Urbana-Champaign</p>
+        <p className = {this.props.schoolAnimClass}>I'm studying Computer Science at the University of Illinois at Urbana-Champaign</p>
         <div className = "clear-float"/>
       </div>
     );
@@ -76,13 +77,13 @@ class MyCarousel extends React.Component {
     this.state = {
       justLoaded: true,
       currentSlide: 0,
-      numImages: 2,
+      numImages: 3,
     }
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
   }
   myImages = [
-    zelda, league
+    mohidab, zelda, league
   ];
 
   myCaptions = [
