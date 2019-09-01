@@ -1,5 +1,6 @@
 import React from 'react';
 import './Accomplishments.css'
+
 function Accomplishments() {
   return (
     <div className="accomplishments-page-wrapper">
@@ -14,8 +15,10 @@ function Accomplishments() {
           </ul>
         </ul>
       </div>
-      <p id="resume-note">Note: Most of the following information can be found in the pdf version found in the bar to the right. Provided here simply for viewing pleasure!</p>
       <div className = "resume-info">
+        <div className = "name">
+          <h1>Muhammed Imran</h1>
+        </div>
         <div id = "basic-info">
           <h2>Education</h2>
           <h4>University of Illinois @ Urbana-Champaign | Fall 2018 - Present</h4>

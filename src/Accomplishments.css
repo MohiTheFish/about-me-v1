@@ -1,7 +1,8 @@
 div.accomplishments-page-wrapper {
-  background-color: rgb(76, 120, 170);
+  /* background-color: rgb(17, 49, 84); */
+  background-image: linear-gradient(to right, rgb(17, 49, 84) 0%, rgb(34, 89, 156)20%,80%, rgb(17,49,84) 100%);
+  background-repeat: no-repeat;
   position: relative;
-  /* padding-bottom: 10px; */
 }
 
 #resume-note {
@@ -24,6 +25,11 @@ div.quick-info {
   border-radius: 15px;
   padding: 15px;
   margin-left: 20px;
+
+  border: 1px solid white;
+
+  
+  word-wrap: break-word;
 }
 
 div.quick-info > ul {
@@ -54,12 +60,20 @@ ul.quick-info-inner li {
 
 /* ------------------------------------------------------------------------------------------ */
 
-
 div.resume-info {
   min-height: 400px;
   padding: 10px 20px 20px 20px;
-  color: #eafff0;
+  color: #ebebeb;
   margin-top: 0px;
+  margin-left: 12%;
+  margin-right: 12%;
+  text-shadow: 1px 1px black;
+}
+
+
+div.name {
+  color: white;
+  text-align: center;
 }
 
 /*Revert to using direct child, >, if things start falling apart */
@@ -70,15 +84,13 @@ div.resume-info div {
 div.resume-info div h2 {
   margin-bottom: 0px;
   text-decoration: underline;
-  text-shadow: 1px 1px black;
 }
 
 div.resume-info div h4 {
   margin-top: 7px;
   padding-left: 20px;
   margin-bottom: 2px;
-  color: rgb(148, 215, 231);
-  text-shadow: 1px 1px black;
+  color: rgb(200, 244, 247);
 }
 
 div.resume-info div p {
@@ -87,7 +99,6 @@ div.resume-info div p {
   padding-left: 30px;
   margin-bottom: 0px;
   color: rgb(255, 251, 246);
-  text-shadow: 1px 1px black;
 }
 
 div.resume-info ul {
@@ -106,12 +117,12 @@ div.resume-info ul li{
 
 div.resume-info li a:link, div.resume-info li a:visited {
   text-decoration-line: underline;
-  color: #c7c7d6;
+  color: #9898cf;
 }
 
 div.resume-info li a:hover, div.resume-info li a:active {
   text-decoration-line: underline;
-  color: #a2b7d6;
+  color: #a1b9ff;
 }
 #achievements-skills-info {
   margin-bottom: 0px;
@@ -133,6 +144,19 @@ div.resume-info li a:hover, div.resume-info li a:active {
 
 @media screen and (max-width:768px){
 
+  div.quick-info {
+    border-radius:0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    margin: 0px;
+    margin-bottom: 15px;
+    float: left;
+
+  }
   #resume-note {
     position: absolute;
     top: 0px;
@@ -141,14 +165,17 @@ div.resume-info li a:hover, div.resume-info li a:active {
   div.resume-info {
     padding-right: 20px;
     padding-left: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
-  div.quick-info {
-    border-radius:0px;
+
+  #achievements-info{
+    float:none;
     width: 100%;
-    height: 100%;
-    padding: 15px;
-    margin: 0px;
-    float: left;
+  }
+  #skills-info{
+    float: none;
+    width: 100%;
   }
 
 

@@ -1,3 +1,27 @@
+:root {
+  --scroll-border : #6b5858;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #cdcde0; 
+  border-left: 1px solid var(--scroll-border);
+  border-right: 1px solid var(--scroll-border);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(35, 95, 163); 
+  border-left: 1px solid var(--scroll-border);
+  border-right: 1px solid var(--scroll-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(43, 72, 102); 
+  border-left: 1px solid var(--scroll-border);
+  border-right: 1px solid var(--scroll-border);
+}
+
+
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin-left: 0px;

@@ -14,8 +14,8 @@ class TitleName extends React.Component{
   render() {
     return (
       <div className = "tiles name-tile">
-        <p className="titleText">Hello.<br/>I'm Muhammed Imran</p>
-        <div style = {{display: (this.props.screenWidth <= 490 ? "block" : "none")}}> <br/> <br/></div>
+        <p className = "titleText">Hello.<br/>I'm Muhammed Imran</p>
+        <div style = {{display: (this.props.screenWidth <= 490 ? "none" : "none")}}> <br/>  <br/></div>
         <p className="subText">But some people call me MohiTheFish.</p>
       </div>
     )
@@ -42,71 +42,120 @@ class SchoolTile extends React.Component {
 class HobbiesTile extends React.Component {
   constructor(props){
     super(props);
-
-    this.state = {
-      currentSlide: 0,
-      numImages: 2,
-    }
-    this.nextSlide = this.nextSlide.bind(this);
-    this.prevSlide = this.prevSlide.bind(this);
-  }
-
-  myImages = [
-    zelda, league
-  ];
-  nextSlide() {
-    console.log("next called");
-    var slide = this.state.currentSlide + 1;
-    if(slide === this.state.numImages){
-      this.setState({
-        currentSlide: 0,
-      })
-    }
-    else{
-      this.setState({
-        currentSlide: slide,
-      })
-    }
-  }
-
-  prevSlide() {
-    console.log("prev called");
-    var slide = this.state.currentSlide - 1;
-    if(slide < 0){
-      this.setState({
-        currentSlide: this.state.numImages - 1,
-      })
-    }
-    else{
-      this.setState({
-        currentSlide: slide,
-      })
-    }
   }
 
   render() {
     return (
       <div className = "tiles hobbies-tile">
-        <div id = "hobbies-message-left">
+        <div id = "hobbies-message-left" className = "carousel-message">
+          <p>Some things I enjoy doing include: </p>
         </div>
-        <div className = "carousel-wrapper" id="hobbies-carousel">
-          <img className="carousel-image" src = {this.myImages[this.state.currentSlide]}/>
-          <div className = "arrow-wrapper"  id="right-arrow-wrapper" onClick = {this.nextSlide}>
-            <i className="material-icons-round arrow-link">arrow_forward</i>
-          </div>
-          <div className = "arrow-wrapper"  id="left-arrow-wrapper" onClick = {this.prevSlide}>
-            <i className="material-icons-round arrow-link">arrow_back</i>
-          </div>
-          <div className = "clear-float"/>
-        </div>
-        <div id = "hobbies-message-right">
-          <p>nonsenseOSIFJSIJEFKSFLKSJKFUJSNFLKAEFKJAKENFLKAJENFAN;EFKNAJEFBAHEFKAJBHEFLHEFAJHUEFLAJUHKE,NFLKAEFJAHKEGAFEKUAWEFJKAEFBJKEYFG</p>
+        {/* <div className="carousel-wrapper">
+          <table style = {{background: `url(${this.myImages[this.state.currentSlide]})`}}>
+            <tr>
+              <td className = "arrow-wrapper" id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link">arrow_back</i></td>
+              <td id="middle-cell"><div style = {{height: "600px"}}/></td>
+              <td className = "arrow-wrapper" id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link">arrow_forward</i></td>
+            </tr>
+          </table>
+        </div> */}
+        <MyCarousel/>
+        <div id = "hobbies-message-right" className = "carousel-message">
+          <p>nonsenseOSIFJSIJE FKSFLKSJKFUJSNFLKAEFKJAKENFLKAJENFAN ;EFKNAJEFBAHEFKAJBHEFLHEFAJHUEFLAJUHKE,NFLKAEFJAHKEGAFEKUAWEFJKAEFBJKEYFG</p>
         </div>
       </div>
     )
   }
 }
 
+
+class MyCarousel extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      justLoaded: true,
+      currentSlide: 0,
+      numImages: 2,
+    }
+    this.nextSlide = this.nextSlide.bind(this);
+    this.prevSlide = this.prevSlide.bind(this);
+  }
+  myImages = [
+    zelda, league
+  ];
+
+  myCaptions = [
+
+  ];
+  nextSlide() {
+    console.log("next called");
+
+    var newState = {
+      justLoaded: false, 
+      leftPressed: false
+    };
+    var slide = this.state.currentSlide + 1;
+    if(slide === this.state.numImages){
+      newState.currentSlide = 0;
+    }
+    else{
+      newState.currentSlide = slide;
+    }
+    this.setState(newState);
+  }
+
+  prevSlide() {
+    console.log("prev called");
+
+    var newState = {
+      justLoaded: false,
+      leftPressed: true
+    };
+    var slide = this.state.currentSlide - 1;
+    if(slide < 0){
+      newState.currentSlide = this.state.numImages - 1;
+    }
+    
+    else{
+      newState.currentSlide = slide;
+    }
+    this.setState(newState);
+  }
+
+  render() {
+    return (
+      // style = {{backgroundImage: `url(${this.myImages[this.state.currentSlide]})`}}
+      <div  className = "carousel-wrapper" id="hobbies-carousel">
+          <div className = "arrow-wrapper"  id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link" id="left-arrow">arrow_back</i></div>
+          <div className = "arrow-wrapper"  id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link" id="right-arrow">arrow_forward</i></div>
+          <div className = "clear-float"/>
+          {
+            (this.state.justLoaded) ?
+            this.myImages.map((value,index) => (
+              <img
+              key = {index}
+              src = {value}
+              style = {{display: (index === 0) ? "inline" : "none"}}/>
+            ))  : 
+            (
+            this.myImages.map((value, index) => (
+              <img 
+              key = {index} 
+              src = {value} 
+              className = {
+                (this.state.justLoaded) ? "" : 
+                ((index === this.state.currentSlide) ? 
+                (this.state.leftPressed ? "active-left": "active-right") : 
+                (this.state.leftPressed ? "inactive-left" : "inactive-right"))}/>
+            ))
+            )
+          }
+
+      </div>
+    )
+  }
+}
 
 class MainPage extends React.Component{ //Bundle all of these components to make routing easier
   constructor(props){
@@ -132,7 +181,7 @@ class MainPage extends React.Component{ //Bundle all of these components to make
   }
 
   componentWillUnmount(){
-    window.removeEventListener('resize', this.updateWidth)
+    window.removeEventListener('resize', this.updateWidth);
   }
 
   constants = {
@@ -146,6 +195,7 @@ class MainPage extends React.Component{ //Bundle all of these components to make
 
   updateHeight(){
     var scrollY = window.scrollY;
+    console.log(scrollY);
 
     var newState = {
       scrolly: window.scrollY,

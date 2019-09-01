@@ -1,3 +1,9 @@
+:root{
+  --transition-time: .5s;
+  --arrow-padding: 20px;
+  --arrow-pos: 5px;
+}
+
 /*--------------------------------------------------------------------------------------------------------*/
 div.tiles {
   height: 600px;
@@ -5,6 +11,8 @@ div.tiles {
   padding: 0px;
 
   overflow: hidden;
+
+  border-bottom: 2px solid black;
 }
 
 div.tiles img {
@@ -81,13 +89,10 @@ div.name-tile > p.subText {
 }
 /*----------------------------------------------------------------------------------------------------*/
 div.school-tile {
-  background-color: rgb(73, 42, 85);
+  background-color: rgb(94, 68, 104);
   
   margin: 0px;
-  padding: 0px;
-
-  border-style: solid;
-  border-width: 2px;
+  padding: 0px; 
 
   overflow: hidden;
 }
@@ -98,7 +103,8 @@ div.school-tile p {
   opacity: 0;
   text-align: center;
   max-width: 100%;
-  padding-top: 225px;
+  max-height: 600px;
+  padding-top: 10%;
 
   margin-left: 20px;
   margin-right: 20px;
@@ -137,72 +143,181 @@ div.hobbies-tile {
   table-layout: fixed;
   width: 100%;
   max-height: 600px;
+  overflow: hidden;
 }
 
-div.hobbies-tile > * {
-  margin: 0px;
-  padding: 0px;
-}
 
 div.hobbies-tile p {
   margin: 0px;
   padding: 0px;
 }
 
-
-#hobbies-message-left {
+.carousel-message {
   width: 100%;
   display: table-cell;
-  background-color: purple;
+  background-color: rgb(37, 111, 221);
   max-height: 600px;
+  padding: 10px;
 }
+#hobbies-message-left {
+
+}
+#hobbies-message-right {
+  
+}
+
+
+#middle-cell {
+  width: 90%;
+}
+
+
+
 .carousel-wrapper, #hobbies-carousel {
-  width: 800px;
+  width: 900px;
   display: table-cell;
-  background-color: green;
   max-height: 600px;
   position: relative;
   margin: 0px;
   padding: 0px;
+
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  
 }
-.carousel-image {
-  width: 800px;
+
+.carousel-wrapper img{
+  height: 600px;
   position: absolute;
-}
-#hobbies-message-right {
   width: 100%;
-  display: table-cell;
-  background-color: orange;
-  max-height: 600px;
+  
+  animation-delay: 0s;
+  animation-timing-function: ease-in-out;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.carousel-wrapper img.start{
+  animation-name:none;
+}
+.carousel-wrapper img.active-left{
+  animation-name: slide-in-left;
+}
+.carousel-wrapper img.active-right{
+  animation-name: slide-in-right;
+}
+.carousel-wrapper img.inactive-left{
+  animation-name: slide-out-left;
+}
+.carousel-wrapper img.inactive-right{
+  animation-name: slide-out-right;
 }
 
-
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 div.arrow-wrapper {
+  box-sizing: content-box;
   position: absolute;
-  top:50%;
+  padding-left: var(--arrow-padding);
+  padding-right: var(--arrow-padding);
+  width: 60px;
+  height: 100%;
+  cursor: pointer;
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
 
+  z-index: 1;
+  transition: var(--transition-time);
+  background-repeat: no-repeat;
+}
+
+.arrow-wrapper:hover {
+  background-color: rgb(0,0,0,.5);
 }
 
 #right-arrow-wrapper {
-  right: 10px;
+  right: 0px;
+  float: right;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+#right-arrow-wrapper:hover {
+  /*parabolic shape*/
+  /* background-image: radial-gradient(ellipse 110% 56% at 100% 50%,  rgb(0,0,0,.5) 89%, transparent 90%); */
+  transition: var(--transition-time);
 }
 #left-arrow-wrapper {
-  left: 10px;
+  left: 0px;
+  float: left;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
-.arrow-link {
-  background-color: red;
-  cursor: pointer;
-  font-size: 40px;
-  border-radius: 24px;
+#left-arrow-wrapper:hover {
+  /*parabolic shape. */
+  /* background-image: radial-gradient(ellipse 110% 56% at 00% 50%, rgb(0,0,0,.5) 89%, transparent  90%); */
 }
 
-.arrow-link:hover{
-  color: green;
+.arrow-link {
+  position: absolute;
+  top: 47%;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-size: 40px;
+  border-radius: 50%;
+  opacity: 1;
+  transition: var(--transition-time);
 }
+
+div.arrow-wrapper:hover .arrow-link{
+  background-color:  rgb(0,0,0,0);
+  color: white;
+  opacity: 1;
+  transition: var(--transition-time);
+}
+#left-arrow {
+  left: calc(var(--arrow-padding) + var(--arrow-pos));
+}
+#right-arrow {
+  right: calc(var(--arrow-padding) + var(--arrow-pos));
+}
+
 
 @keyframes appearText-hobbies-tile {
   0% {
@@ -219,7 +334,7 @@ div.arrow-wrapper {
 /*----------------------------------------------------------------------------------------------------*/
 
 
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px){
   div.tiles {
     height: 500px;
   }
@@ -233,6 +348,8 @@ div.arrow-wrapper {
     height: 120px;
     margin: 0px;
     padding: 0px;
+    position: absolute;
+    top: 10%;
   
   }
   
@@ -240,11 +357,13 @@ div.arrow-wrapper {
     text-align: center; 
     font-size: 2.5em;
     opacity: 0;
-  
     width: 95%; 
     height: 50px;
     margin: 0px;
     padding: 0px;
+
+    position: absolute;
+    top: 50%;
   
   }
 
