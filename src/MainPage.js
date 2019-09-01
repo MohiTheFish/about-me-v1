@@ -81,6 +81,7 @@ class MyCarousel extends React.Component {
     }
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
+    this.pickClass = this.pickClass.bind(this);
   }
   myImages = [
     mohidab, zelda, league
@@ -124,39 +125,130 @@ class MyCarousel extends React.Component {
     this.setState(newState);
   }
 
+  pickClass(index) {
+    var relativeSlide = index-this.state.currentSlide;
+    if(relativeSlide === 0){
+      if(this.state.leftPressed){
+        return "active-left";
+      }
+      else{
+        return "active-right";
+      }
+    }
+
+    switch(index) {
+      case 0: {
+        if(this.state.leftPressed){
+          if(relativeSlide === -1){
+            return "standby-left";
+          }
+          else if(relativeSlide === (1-this.state.numImages)){
+            return "inactive-left";
+          }
+        }
+        else{
+          if(relativeSlide === -1){
+            return "inactive-right";
+          }
+          else if(relativeSlide === (1-this.state.numImages)){
+            return "standby-right";
+          }
+        }
+        break;
+      }
+      case (this.state.numImages-1): {
+        if(this.state.leftPressed){
+          if(relativeSlide === (this.state.numImages-1)){
+            return "standby-left";
+          }
+          else if(relativeSlide === 1){
+            return "inactive-left";
+          }
+        }
+        else{
+          if(relativeSlide === (this.state.numImages-1)){
+            return "inactive-right";
+          }
+          else if(relativeSlide === 1){
+            return "standby-right";
+          }
+        }
+        break;
+      }
+      default: {
+        if(this.state.leftPressed){
+          if(relativeSlide === -1){
+            return "standby-left";
+          }
+          else if(relativeSlide === 1){
+            return "inactive-left";
+          }
+        }
+        else{
+          if(relativeSlide === -1){
+            return "inactive-right";
+          }
+          else if(relativeSlide === 1){
+            return "standby-right";
+          }
+        }
+      }
+    }
+  }
+
+  startingCarousel() {
+    return (
+      this.myImages.map((value,index) => (
+        <img 
+        key = {index}
+        src = {value}
+        style = {{display: (index === 0) ? "inline" : "none"}}/>
+      ))  
+    )
+  }
+
+  twoImageCase() {
+    return (
+      this.myImages.map((value, index) => (
+        <img
+        key = {index} 
+        src = {value} 
+        className = { 
+          ((index === this.state.currentSlide) ? 
+          (this.state.leftPressed ? "active-left": "active-right") : 
+          (this.state.leftPressed ? "inactive-left" : "inactive-right"))}/>
+      ))
+    )
+  }
+
+  generalCase() {
+    return (
+      this.myImages.map((value, index) => (
+        <img 
+        key = {index} 
+        src = {value} 
+        className = {this.pickClass(index)}/>
+      ))
+    )
+  }
+  
   render() {
     return (
       // style = {{backgroundImage: `url(${this.myImages[this.state.currentSlide]})`}}
-      <div  className = "carousel-wrapper" id="hobbies-carousel">
+      <div onContextMenu = {(event) => {event.preventDefault()}} className = "carousel-wrapper" id="hobbies-carousel">
           <div className = "arrow-wrapper"  id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link" id="left-arrow">arrow_back</i></div>
           <div className = "arrow-wrapper"  id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link" id="right-arrow">arrow_forward</i></div>
           <div className = "clear-float"/>
           {
-            (this.state.justLoaded) ?
-            this.myImages.map((value,index) => (
-              <img
-              key = {index}
-              src = {value}
-              style = {{display: (index === 0) ? "inline" : "none"}}/>
-            ))  : 
-            (
-            this.myImages.map((value, index) => (
-              <img 
-              key = {index} 
-              src = {value} 
-              className = {
-                (this.state.justLoaded) ? "" : 
-                ((index === this.state.currentSlide) ? 
-                (this.state.leftPressed ? "active-left": "active-right") : 
-                (this.state.leftPressed ? "inactive-left" : "inactive-right"))}/>
-            ))
-            )
+            (this.state.justLoaded) ? this.startingCarousel() :   
+            (this.state.numImages === 2) ? this.twoImageCase() :
+            this.generalCase()
           }
-
       </div>
     )
   }
 }
+
 
 class MainPage extends React.Component{ //Bundle all of these components to make routing easier
   constructor(props){

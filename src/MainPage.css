@@ -175,6 +175,7 @@ div.hobbies-tile p {
 
 .carousel-wrapper, #hobbies-carousel {
   width: 900px;
+  box-sizing: border-box;
   display: table-cell;
   max-height: 600px;
   position: relative;
@@ -200,6 +201,19 @@ div.hobbies-tile p {
   animation-duration: .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge*/
+   user-select: none; 
+
+   -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 .carousel-wrapper img.start{
   animation-name:none;
@@ -215,6 +229,12 @@ div.hobbies-tile p {
 }
 .carousel-wrapper img.inactive-right{
   animation-name: slide-out-right;
+}
+.carousel-wrapper img.standby-left{
+  transform: translateX(-100%);
+}
+.carousel-wrapper img.standby-right{
+  transform: translateX(100%);
 }
 
 @keyframes slide-in-left {
@@ -243,7 +263,7 @@ div.hobbies-tile p {
 }
 @keyframes slide-out-right {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0%)
   }
   100% {
     transform: translateX(-100%);
