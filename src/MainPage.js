@@ -1,9 +1,13 @@
 import React from 'react';
 
 import foellinger from './images/foellinger.jpg'
-import league from './images/leagueimg.jpg'
 import zelda from './images/zelda25.jpg'
 import mohidab from './images/mohidab.jpg'
+import family from './images/family.jpg'
+import alaska from './images/wide-alaska.jpg'
+import museum from './images/museum.jpg'
+import ferris from './images/ferris.jpg'
+
 
 import './MainPage.css';
 
@@ -49,11 +53,11 @@ class HobbiesTile extends React.Component {
     return (
       <div className = "tiles hobbies-tile">
         <div id = "hobbies-message-left" className = "carousel-message">
-          <p>Some things I enjoy doing include: </p>
+          <p id = "carousel-tile">Some things I enjoy doing include: </p>
         </div>
         <MyCarousel/>
         <div id = "hobbies-message-right" className = "carousel-message">
-          <p>nonsenseOSIFJSIJE FKSFLKSJKFUJSNFLKAEFKJAKENFLKAJENFAN ;EFKNAJEFBAHEFKAJBHEFLHEFAJHUEFLAJUHKE,NFLKAEFJAHKEGAFEKUAWEFJKAEFBJKEYFG</p>
+          <p id = "carousel-caption">Caption Here</p>
         </div>
       </div>
     )
@@ -68,14 +72,14 @@ class MyCarousel extends React.Component {
     this.state = {
       justLoaded: true,
       currentSlide: 0,
-      numImages: 3,
+      numImages: 4,
     }
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.pickClass = this.pickClass.bind(this);
   }
   myImages = [
-    mohidab, zelda, league
+    family, alaska, ferris, mohidab
   ];
 
   myCaptions = [
@@ -136,6 +140,9 @@ class MyCarousel extends React.Component {
           else if(relativeSlide === (1-this.state.numImages)){
             return "inactive-left";
           }
+          else{
+            return "hidden";
+          }
         }
         else{
           if(relativeSlide === -1){
@@ -143,6 +150,9 @@ class MyCarousel extends React.Component {
           }
           else if(relativeSlide === (1-this.state.numImages)){
             return "standby-right";
+          }
+          else {
+            return "hidden";
           }
         }
         break;
@@ -155,6 +165,9 @@ class MyCarousel extends React.Component {
           else if(relativeSlide === 1){
             return "inactive-left";
           }
+          else {
+            return "hidden";
+          }
         }
         else{
           if(relativeSlide === (this.state.numImages-1)){
@@ -162,6 +175,9 @@ class MyCarousel extends React.Component {
           }
           else if(relativeSlide === 1){
             return "standby-right";
+          }
+          else {
+            return "hidden";
           }
         }
         break;
@@ -174,6 +190,9 @@ class MyCarousel extends React.Component {
           else if(relativeSlide === 1){
             return "inactive-left";
           }
+          else {
+            return "hidden";
+          }
         }
         else{
           if(relativeSlide === -1){
@@ -181,6 +200,9 @@ class MyCarousel extends React.Component {
           }
           else if(relativeSlide === 1){
             return "standby-right";
+          }
+          else {
+            return "hidden";
           }
         }
       }
@@ -193,7 +215,11 @@ class MyCarousel extends React.Component {
         <img 
         key = {index}
         src = {value}
-        style = {{display: (index === 0) ? "inline" : "none"}}/>
+        className = {
+          (index === 0) ? "start active-left" :
+          (index === 1) ? "start inactive-left" : 
+          (index === (this.state.numImages-1) ) ? "standby-left" : "hidden"
+        }/>
       ))  
     )
   }
@@ -213,6 +239,7 @@ class MyCarousel extends React.Component {
   }
 
   generalCase() {
+    console.log("here");
     return (
       this.myImages.map((value, index) => (
         <img 
