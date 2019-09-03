@@ -51,15 +51,6 @@ class HobbiesTile extends React.Component {
         <div id = "hobbies-message-left" className = "carousel-message">
           <p>Some things I enjoy doing include: </p>
         </div>
-        {/* <div className="carousel-wrapper">
-          <table style = {{background: `url(${this.myImages[this.state.currentSlide]})`}}>
-            <tr>
-              <td className = "arrow-wrapper" id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link">arrow_back</i></td>
-              <td id="middle-cell"><div style = {{height: "600px"}}/></td>
-              <td className = "arrow-wrapper" id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link">arrow_forward</i></td>
-            </tr>
-          </table>
-        </div> */}
         <MyCarousel/>
         <div id = "hobbies-message-right" className = "carousel-message">
           <p>nonsenseOSIFJSIJE FKSFLKSJKFUJSNFLKAEFKJAKENFLKAJENFAN ;EFKNAJEFBAHEFKAJBHEFLHEFAJHUEFLAJUHKE,NFLKAEFJAHKEGAFEKUAWEFJKAEFBJKEYFG</p>
