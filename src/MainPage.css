@@ -152,6 +152,7 @@ div.hobbies-tile p {
 }
 
 .carousel-message {
+  /* display: inline; */
   width: 100%;
   display: table-cell;
   /* background-color: rgb(37, 111, 221); */
@@ -216,7 +217,6 @@ div.hobbies-tile p {
 .carousel-wrapper img.inactive-right{
   animation-name: slide-out-right;
 }
-<<<<<<< HEAD
 .carousel-wrapper img.standby-left{
   transform: translateX(-100%);
 }
@@ -224,7 +224,7 @@ div.hobbies-tile p {
   transform: translateX(100%);
 }
 .carousel-wrapper img.hidden {
-  display: none;
+  /* display: none; */
   visibility: hidden;
 }
 @keyframes start-position {
@@ -235,9 +235,6 @@ div.hobbies-tile p {
     transform: translateX(0%);
   }
 }
-=======
-
->>>>>>> parent of 4705ea3... made transitions smooth. consolidated methods
 @keyframes slide-in-left {
   0% {
     transform: translateX(-100%);
@@ -283,7 +280,7 @@ div.arrow-wrapper {
   -ms-user-select: none;
   -webkit-user-select: none;
 
-  z-index: 1;
+  z-index: 0;
   transition: var(--transition-time);
   background-repeat: no-repeat;
 }

@@ -87,7 +87,7 @@ class MyCarousel extends React.Component {
     this.prevSlide = this.prevSlide.bind(this);
   }
   myImages = [
-    family, alaska, ferris, mohidab
+    mohidab, family, alaska, ferris
   ];
 
   myCaptions = [
@@ -163,7 +163,6 @@ class MyCarousel extends React.Component {
             return "hidden";
           }
         }
-        break;
       }
       case (this.state.numImages-1): {
         if(this.state.leftPressed){
@@ -188,7 +187,6 @@ class MyCarousel extends React.Component {
             return "hidden";
           }
         }
-        break;
       }
       default: {
         if(this.state.leftPressed){
@@ -286,7 +284,14 @@ class MyCarousel extends React.Component {
             ))
             )
           }
+<<<<<<< Updated upstream
 
+=======
+          <div className = "arrow-wrapper"  id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link" id="left-arrow">arrow_back</i></div>
+          <div className = "arrow-wrapper"  id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link" id="right-arrow">arrow_forward</i></div>
+          <div className = "clear-float"/>
+          
+>>>>>>> Stashed changes
       </div>
     )
   }
