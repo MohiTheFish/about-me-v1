@@ -14,9 +14,7 @@ div.tiles {
 
   border-bottom: 2px solid black;
 }
-div.tiles:last-child{
-  border-bottom: none;
-}
+
 div.tiles img {
   height: 600px;
 }
