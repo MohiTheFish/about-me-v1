@@ -8,11 +8,14 @@
 div.tiles {
   height: 600px;
   box-sizing: content-box;
-  padding: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
   overflow: hidden;
 
-  border-bottom: 2px solid black;
+  background-color: #82b8eb;
+  background-image: linear-gradient(to bottom,#6ca8e0 0%, #4c94d8 20%, #3d90dd 50%, #4c94d8 80%, #6ca8e0 100% )
+
 }
 
 div.tiles img {
@@ -26,6 +29,7 @@ div.name-tile {
   background-image: url(./images/water.jpg);
   background-size: 100% 700px;
   margin: 0px;
+  padding: 0px;
 
   display: flex;
   flex-direction: column;
@@ -89,10 +93,9 @@ div.name-tile > p.subText {
 }
 /*----------------------------------------------------------------------------------------------------*/
 div.school-tile {
-  background-color: rgb(94, 68, 104);
+  /* background-color: rgb(94, 68, 104); */
   
-  margin: 0px;
-  padding: 0px; 
+  margin: 0px; 
 
   overflow: hidden;
 }
@@ -110,7 +113,10 @@ div.school-tile p {
   margin-right: 20px;
   
 }
-
+#foellinger-img {
+  border-radius: 48%;
+  margin-right: 10px; 
+}
 .clear-float {
   clear: both;
 }
@@ -124,7 +130,7 @@ div.school-tile  p.schoolTileAnimate {
 
 @keyframes appearText-school-tile {
   0% {
-    color: blue;
+    color: rgb(55, 91, 209);
     opacity: 0;
   }
   100% {
@@ -135,30 +141,37 @@ div.school-tile  p.schoolTileAnimate {
 /*----------------------------------------------------------------------------------------------------*/
 
 div.hobbies-tile {
-  background-color: rgb(100, 121, 172);
+  /* background-color: rgb(100, 121, 172); */
   margin: 0px;
-  padding: 0px;
+  display: inline-flex;
   position: static;
-  display: table;
-  table-layout: fixed;
   width: 100%;
   max-height: 600px;
 }
-
 
 div.hobbies-tile p {
   margin: 0px;
   padding: 0px;
 }
 
-.carousel-message {
-  /* display: inline; */
+.carousel-message{
   width: 100%;
-  display: table-cell;
-  /* background-color: rgb(37, 111, 221); */
+  height: 100%;
+  display: inline-table;
   background-color: clear;
   max-height: 600px;
   padding: 10px;
+}
+.carousel-message p{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  text-align: center;
+  font-size: 36px;
+  
 }
 #hobbies-message-left {
 
@@ -167,17 +180,10 @@ div.hobbies-tile p {
   
 }
 
-
-#middle-cell {
-  width: 90%;
-}
-
-
-
 .carousel-wrapper, #hobbies-carousel {
-  width: 900px;
-  display: table-cell;
-  max-height: 600px;
+  min-width: 900px;
+  display: inline-table;
+  height: 600px;
   position: relative;
   margin: 0px;
   padding: 0px;
@@ -188,6 +194,8 @@ div.hobbies-tile p {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
+
+  border-radius: 10%;
   
 }
 
@@ -201,9 +209,23 @@ div.hobbies-tile p {
   animation-duration: .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;   
+  -khtml-user-select: none;    
+  -moz-user-select: none;      
+  -ms-user-select: none;       
+   user-select: none; 
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
-.carousel-wrapper img.start{
-  animation-delay: -0.5s;
+
+.carousel-wrapper img.start {
+  animation-delay: -.5s;
 }
 .carousel-wrapper img.active-left{
   animation-name: slide-in-left;
@@ -291,9 +313,9 @@ div.arrow-wrapper {
 
 #right-arrow-wrapper {
   right: 0px;
-  float: right;
-  border-top-left-radius: 100%;
-  border-bottom-left-radius: 100%;
+  z-index: 3;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
 }
 #right-arrow-wrapper:hover {
   /*parabolic shape*/
@@ -302,13 +324,14 @@ div.arrow-wrapper {
 }
 #left-arrow-wrapper {
   left: 0px;
-  float: left;
+  z-index: 3;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 #left-arrow-wrapper:hover {
   /*parabolic shape. */
   /* background-image: radial-gradient(ellipse 110% 56% at 00% 50%, rgb(0,0,0,.5) 89%, transparent  90%); */
+  transition: var(--transition-time);
 }
 
 .arrow-link {
@@ -387,6 +410,9 @@ div.arrow-wrapper:hover .arrow-link{
 
   div.school-tile {
     position: relative;
+    min-height: 600px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
 
@@ -395,18 +421,10 @@ div.arrow-wrapper:hover .arrow-link{
     text-align: center; 
     font-size: 3.5em;
     position: absolute;
-    top: 140px;
+    top: 85px;
 
     max-width: 100%;
     margin-right: 0px;
-    padding-top: 0px;
-  }
-
-  div.school-tile img {
-    float:none;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
   }
 
   @keyframes appearText-school-tile {
@@ -419,6 +437,42 @@ div.arrow-wrapper:hover .arrow-link{
       opacity: 1;
     }
   }
+
+  #foellinger-img{
+    width: 100%;
+    border-radius: 0%;
+    margin: 0px;
+  }
+
+  
+  div.hobbies-tile{
+    display: block;
+    min-height: 800px;
+    box-sizing: border-box;
+  }
+  .carousel-message, .carousel-message p {
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+
+    font-size: 20px;
+    position: static;
+    height: auto;
+  }
+  #hobbies-carousel {
+    width: 100%;
+    min-width: 0px;
+    height: auto;
+  }
+  .carousel-wrapper{
+    display: block;
+    width: 200px;
+    position: static;
+    height: auto;
+  }
+
+
 
 
 

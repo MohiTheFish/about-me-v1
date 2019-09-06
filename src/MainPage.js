@@ -35,7 +35,7 @@ class SchoolTile extends React.Component {
   render() {
     return (
       <div className = "tiles school-tile">
-        <img align="right" src={foellinger} alt="Foellinger Auditorium."></img>
+        <div id="foellinger-img-wrapper"><img id = "foellinger-img" align="right" src={foellinger} alt="Foellinger Auditorium."/></div>
         <p className = {this.props.schoolAnimClass}>I'm studying Computer Science at the University of Illinois at Urbana-Champaign</p>
         <div className = "clear-float"/>
       </div>
@@ -52,21 +52,12 @@ class HobbiesTile extends React.Component {
   render() {
     return (
       <div className = "tiles hobbies-tile">
-        <div id = "hobbies-message-left" className = "carousel-message">
-          <p id = "carousel-tile">Some things I enjoy doing include: </p>
+        <div className = "carousel-message">
+          <p>Since coming here in the fall of 2018, I've done some cool stuff like:</p>
         </div>
-        {/* <div className="carousel-wrapper">
-          <table style = {{background: `url(${this.myImages[this.state.currentSlide]})`}}>
-            <tr>
-              <td className = "arrow-wrapper" id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link">arrow_back</i></td>
-              <td id="middle-cell"><div style = {{height: "600px"}}/></td>
-              <td className = "arrow-wrapper" id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link">arrow_forward</i></td>
-            </tr>
-          </table>
-        </div> */}
         <MyCarousel/>
-        <div id = "hobbies-message-right" className = "carousel-message">
-          <p id = "carousel-caption">Caption Here</p>
+        <div className = "carousel-message">
+          <p>And I'm always looking for more to do :)</p>
         </div>
       </div>
     )
@@ -258,41 +249,17 @@ class MyCarousel extends React.Component {
   
   render() {
     return (
-      // style = {{backgroundImage: `url(${this.myImages[this.state.currentSlide]})`}}
-      <div  className = "carousel-wrapper" id="hobbies-carousel">
+      // style = {{backgroundImage: `url(${this.myImages[this.state.currentSlide]})`}} 
+        <div onContextMenu = {(event) => {event.preventDefault()}}  className = "carousel-wrapper" id="hobbies-carousel">
           <div className = "arrow-wrapper"  id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link" id="left-arrow">arrow_back</i></div>
           <div className = "arrow-wrapper"  id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link" id="right-arrow">arrow_forward</i></div>
           <div className = "clear-float"/>
           {
-            (this.state.justLoaded) ?
-            this.myImages.map((value,index) => (
-              <img
-              key = {index}
-              src = {value}
-              style = {{display: (index === 0) ? "inline" : "none"}}/>
-            ))  : 
-            (
-            this.myImages.map((value, index) => (
-              <img 
-              key = {index} 
-              src = {value} 
-              className = {
-                (this.state.justLoaded) ? "" : 
-                ((index === this.state.currentSlide) ? 
-                (this.state.leftPressed ? "active-left": "active-right") : 
-                (this.state.leftPressed ? "inactive-left" : "inactive-right"))}/>
-            ))
-            )
+            (this.state.justLoaded) ? this.startingCarousel() :   
+            (this.state.numImages === 2) ? this.twoImageCase() :
+            this.generalCase()
           }
-<<<<<<< Updated upstream
-
-=======
-          <div className = "arrow-wrapper"  id="left-arrow-wrapper" onClick = {this.prevSlide}><i className="material-icons-round arrow-link" id="left-arrow">arrow_back</i></div>
-          <div className = "arrow-wrapper"  id="right-arrow-wrapper" onClick = {this.nextSlide}><i className="material-icons-round arrow-link" id="right-arrow">arrow_forward</i></div>
-          <div className = "clear-float"/>
-          
->>>>>>> Stashed changes
-      </div>
+        </div>
     )
   }
 }
