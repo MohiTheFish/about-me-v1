@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/about-me/static/css/main.bb27e902.chunk.css",
+    "main.js": "/about-me/static/js/main.d292ca76.chunk.js",
+    "main.js.map": "/about-me/static/js/main.d292ca76.chunk.js.map",
+    "runtime-main.js": "/about-me/static/js/runtime-main.e87aea53.js",
+    "runtime-main.js.map": "/about-me/static/js/runtime-main.e87aea53.js.map",
+    "static/css/2.1e66eaca.chunk.css": "/about-me/static/css/2.1e66eaca.chunk.css",
+    "static/js/2.0cfcf77a.chunk.js": "/about-me/static/js/2.0cfcf77a.chunk.js",
+    "static/js/2.0cfcf77a.chunk.js.map": "/about-me/static/js/2.0cfcf77a.chunk.js.map",
+    "index.html": "/about-me/index.html",
+    "precache-manifest.62d24992e9c2d686b62496231d47d007.js": "/about-me/precache-manifest.62d24992e9c2d686b62496231d47d007.js",
+    "service-worker.js": "/about-me/service-worker.js",
+    "static/css/2.1e66eaca.chunk.css.map": "/about-me/static/css/2.1e66eaca.chunk.css.map",
+    "static/css/main.bb27e902.chunk.css.map": "/about-me/static/css/main.bb27e902.chunk.css.map",
+    "static/media/datavis.jpg": "/about-me/static/media/datavis.0bbad7df.jpg",
+    "static/media/eoh-exhibit.jpg": "/about-me/static/media/eoh-exhibit.30c9e255.jpg",
+    "static/media/family.jpg": "/about-me/static/media/family.f1bf1339.jpg",
+    "static/media/ferris.jpg": "/about-me/static/media/ferris.c442cbbd.jpg",
+    "static/media/foellinger.jpg": "/about-me/static/media/foellinger.a20bcea4.jpg",
+    "static/media/leaguebackground.jpg": "/about-me/static/media/leaguebackground.2357a38d.jpg",
+    "static/media/mohidab.jpg": "/about-me/static/media/mohidab.e993dfa9.jpg",
+    "static/media/museum.jpg": "/about-me/static/media/museum.04525d4b.jpg",
+    "static/media/purePoster.jpg": "/about-me/static/media/purePoster.f62d4783.jpg",
+    "static/media/MainPage.css": "/about-me/static/media/water.5c213542.jpg",
+    "static/media/wide-alaska.jpg": "/about-me/static/media/wide-alaska.9d225929.jpg",
+    "static/media/zelda25.jpg": "/about-me/static/media/zelda25.26db1de5.jpg"
+  }
+}
